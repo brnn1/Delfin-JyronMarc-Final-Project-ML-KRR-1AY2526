@@ -1,0 +1,36 @@
+PROJECT OVERVIEW The FireSafeBot is a hybrid intelligent chatbot designed to provide users with immediate, accurate basic fire safety information and risk assessment. Fire safety queries can be varied and complex in their phrasing. This project combines Machine Learning (CSST101) to process natural language inputs and classify types of fire hazards, with Knowledge Representation and Reasoning (CSST102) to utilize established fire codes and safety protocols to deliver precise, rule-based recommendations. This hybrid approach ensures the bot can understand broad user inputs while providing expert-verified safety advice..
+
+OBJECTIVES General Objective: To develop an accessible, interactive hybrid chatbot agent that raises awareness about fire safety and provides actionable advice for common fire hazards.
+
+Specific Objectives:
+(1) To collect and preprocess a textual dataset related to common residential fire hazards and safety queries.
+
+(2) To train a Machine Learning model (CSST101) to accurately classify user inputs into distinct hazard categories (e.g., Electrical, Cooking, Flammable Materials).
+
+(3) To establish a knowledge base consisting of IF-THEN rules based on standard fire safety procedures (CSST102).
+
+MACHINE LEARNING COMPONENTS
+Algorithm Used: Deep Neural Network (ANN) using Keras Sequential API. Model
+Data Size: 1300+ Row
+Model Accuracy:  0.95 
+
+Data Collection: Data was gathered from synthetic generation of common user queries, and historical descriptions of common household fire causes.
+Data Preprocessing: 
+	(1) Tokenization
+	(2) Lemmatization
+	(3) Vectorization
+	(4) Label Encoding
+Model Training: The model is compiled with categorical_crossentropy loss and trained over 200 epochs.
+Model Evaluation: The performance is monitored via the training logs.
+
+The Reasoning Mechanism: Performed Symbolic Reasoning through the following logic:
+
+Pattern Recognition: The ANN classifies user input into a symbolic tag.
+Mapping (Inference): The system iterates through the JSON Knowledge Base to find the matching tag.
+Response Generation: It randomly selects an expert-verified response from the mapped category.
+
+Example: 
+Rule 1: IF Predicted_Tag IS "Cooking_Fire" THEN Select Response FROM "intents.json" where tag="Cooking_Fire".
+Rule 2: IF Predicted_Tag IS "Electrical_Short" THEN Select Response FROM "intents.json" where tag="Electrical_Short".
+
+Conclusion: The development of the FireSafeBot successfully demonstrates the synergy between Artificial Neural Networks and Knowledge Representation and Reasoning. By combining these two distinct fields of AI, the project achieved a robust solution for public safety education.
